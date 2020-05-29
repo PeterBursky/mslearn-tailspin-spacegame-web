@@ -44,7 +44,7 @@ steps:
     projects: '**/*.csproj'
 
 - task: SonarCloudPrepare@1
-  displayName: 'Prepare Sonar-Cloud analysis'
+  displayName: 'Prepare SonarCloud analysis'
   inputs:
     SonarCloud: 'SonarCloud-scans'
     organization: '$(SonarOrganization)'
@@ -83,10 +83,10 @@ steps:
   displayName: 'Create code coverage report'
 
 - task: SonarCloudAnalyze@1
-  displayName: 'Run Sonar-Cloud code analysis'
+  displayName: 'Run SonarCloud code analysis'
 
 - task: SonarCloudPublish@1
-  displayName: 'Publish Sonar-Cloud quality gate results'
+  displayName: 'Publish SonarCloud quality gate results'
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'
