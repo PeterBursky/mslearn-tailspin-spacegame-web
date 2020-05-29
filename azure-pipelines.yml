@@ -44,9 +44,9 @@ steps:
     projects: '**/*.csproj'
 
 - task: SonarCloudPrepare@1
-  displayName: 'Prepare SonarCloud analysis'
+  displayName: 'Prepare Sonar-Cloud analysis'
   inputs:
-    SonarCloud: 'SonarCloud connection 1'
+    SonarCloud: 'SonarCloud-scans'
     organization: '$(SonarOrganization)'
     scannerMode: 'MSBuild'
     projectKey: '$(SonarProjectKey)'
@@ -83,10 +83,10 @@ steps:
   displayName: 'Create code coverage report'
 
 - task: SonarCloudAnalyze@1
-  displayName: 'Run SonarCloud code analysis'
+  displayName: 'Run Sonar-Cloud code analysis'
 
 - task: SonarCloudPublish@1
-  displayName: 'Publish SonarCloud quality gate results'
+  displayName: 'Publish Sonar-Cloud quality gate results'
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'
